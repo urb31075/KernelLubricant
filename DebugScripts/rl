@@ -1,0 +1,5 @@
+#!/bin/bash
+echo 'reload fullkernel.ko'
+sudo dmesg -C
+sudo rmmod fullkernel.ko
+sudo dmesg

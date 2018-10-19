@@ -1,0 +1,38 @@
+#!/bin/bash
+
+RED='\033[0;31m'       #  ${RED}      # красный цвет знаков
+GREEN='\033[0;32m'     #  ${GREEN}    # зелёный цвет знаков
+YELLOW='\033[0;33m'     #  ${YELLOW}    # желтый цвет знаков
+BLUE='\033[0;34m'       #  ${BLUE}      # синий цвет знаков
+MAGENTA='\033[0;35m'     #  ${MAGENTA}    # фиолетовый цвет знаков
+CYAN='\033[0;36m'       #  ${CYAN}      # цвет морской волны знаков
+GRAY='\033[0;37m'       #  ${GRAY}      # серый цвет знаков
+NORMAL='\033[0m'      #  ${NORMAL}    # все атрибуты по умолчанию
+
+clear
+
+echo -en "${YELLOW} *** load fullkernel.ko ***\n${NORMAL}"
+sudo dmesg -C
+sudo insmod fullkernel.ko
+sudo dmesg
+
+sudo lsmod | grep "fullkernel"
+
+sudo chmod 666 /dev/kernel_stub
+
+echo -en "${YELLOW}*** write data ***\n${NORMAL}"
+sudo dmesg -C
+sudo echo 'abcde' > /dev/kernel_stub
+sudo dmesg
+
+echo -en "${YELLOW}*** read data ***\n${NORMAL}"
+
+sudo dmesg -C
+cat /dev/kernel_stub
+echo -en "\n"
+sudo dmesg
+
+echo -en "${YELLOW}*** reload fullkernel.ko ***\n${NORMAL}"
+sudo dmesg -C
+sudo rmmod fullkernel.ko
+sudo dmesg
