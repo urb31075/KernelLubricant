@@ -4,16 +4,22 @@
     <logicalFolder name="HeaderFiles"
                    displayName="Header Files"
                    projectFiles="true">
+      <itemPath>debug_nvdimm.h</itemPath>
       <itemPath>device_read.h</itemPath>
       <itemPath>device_write.h</itemPath>
     </logicalFolder>
     <logicalFolder name="ResourceFiles"
                    displayName="Resource Files"
                    projectFiles="true">
+      <itemPath>../DebugScripts/.bash_login</itemPath>
+      <itemPath>../DebugScripts/fl</itemPath>
+      <itemPath>../DebugScripts/ld</itemPath>
+      <itemPath>../DebugScripts/rl</itemPath>
     </logicalFolder>
     <logicalFolder name="SourceFiles"
                    displayName="Source Files"
                    projectFiles="true">
+      <itemPath>debug_nvdimm.c</itemPath>
       <itemPath>device_read.c</itemPath>
       <itemPath>device_write.c</itemPath>
       <itemPath>kernel3.c</itemPath>
@@ -34,7 +40,7 @@
   <confs>
     <conf name="Debug" type="1">
       <toolsSet>
-        <compilerSet>default</compilerSet>
+        <compilerSet>GNU|GNU</compilerSet>
         <dependencyChecking>true</dependencyChecking>
         <rebuildPropChanged>false</rebuildPropChanged>
       </toolsSet>
@@ -43,6 +49,18 @@
           <standard>11</standard>
         </ccTool>
       </compileType>
+      <item path="../DebugScripts/.bash_login" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../DebugScripts/fl" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../DebugScripts/ld" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../DebugScripts/rl" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="debug_nvdimm.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="debug_nvdimm.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="device_read.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="device_read.h" ex="false" tool="3" flavor2="0">
@@ -75,6 +93,18 @@
           <developmentMode>5</developmentMode>
         </asmTool>
       </compileType>
+      <item path="../DebugScripts/.bash_login" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../DebugScripts/fl" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../DebugScripts/ld" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="../DebugScripts/rl" ex="false" tool="3" flavor2="0">
+      </item>
+      <item path="debug_nvdimm.c" ex="false" tool="0" flavor2="0">
+      </item>
+      <item path="debug_nvdimm.h" ex="false" tool="3" flavor2="0">
+      </item>
       <item path="device_read.c" ex="false" tool="0" flavor2="0">
       </item>
       <item path="device_read.h" ex="false" tool="3" flavor2="0">

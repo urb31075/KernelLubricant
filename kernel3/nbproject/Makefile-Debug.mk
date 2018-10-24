@@ -35,6 +35,7 @@ OBJECTDIR=${CND_BUILDDIR}/${CND_CONF}/${CND_PLATFORM}
 
 # Object Files
 OBJECTFILES= \
+	${OBJECTDIR}/debug_nvdimm.o \
 	${OBJECTDIR}/device_read.o \
 	${OBJECTDIR}/device_write.o \
 	${OBJECTDIR}/kernel3.o
@@ -63,6 +64,11 @@ LDLIBSOPTIONS=
 ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kernel3: ${OBJECTFILES}
 	${MKDIR} -p ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}
 	${LINK.c} -o ${CND_DISTDIR}/${CND_CONF}/${CND_PLATFORM}/kernel3 ${OBJECTFILES} ${LDLIBSOPTIONS}
+
+${OBJECTDIR}/debug_nvdimm.o: debug_nvdimm.c
+	${MKDIR} -p ${OBJECTDIR}
+	${RM} "$@.d"
+	$(COMPILE.c) -g -MMD -MP -MF "$@.d" -o ${OBJECTDIR}/debug_nvdimm.o debug_nvdimm.c
 
 ${OBJECTDIR}/device_read.o: device_read.c
 	${MKDIR} -p ${OBJECTDIR}

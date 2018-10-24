@@ -8,7 +8,7 @@
 #ifndef DEVICE_WRITE_H
 #define DEVICE_WRITE_H
 
-void debug_write_operation(void);
+void write_nvdimm_stub(const char *buffer, size_t len);
 
 #endif /* DEVICE_WRITE_H */
 

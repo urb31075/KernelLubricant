@@ -4,29 +4,30 @@
 #include <linux/fs.h>
 #include <linux/uaccess.h>
 #include "device_read.h"
+#include "debug_nvdimm.h"
 
-MODULE_LICENSE("GPL");
-ssize_t debug_read_operation(struct file *flip, char *buffer, size_t len, loff_t *offset)
+extern char DebugNVDIMMBuffer[DEBUG_NVDIMM_BUFFER_LENGTH]; //Отладочный буффер памяти эмулирующий NVDIMM
+extern int DebugNVDIMMBufferAmount; //Колличество байт данных в отладочном буфере
+
+ssize_t get_nvdimm_stub_data_amount(void)
+{
+    return DebugNVDIMMBufferAmount;
+}
+
+ssize_t read_nvdimm_stub(char *buffer)
     {
         static int finished = 0;
-
         if (finished) 
         {
             printk(KERN_INFO "URB Read End\n");
             finished = 0;
             return 0;
         }
-
         printk(KERN_INFO "URB debug_read_operation.\n");
-   
         finished = 1;    
-    
-        char kbuf[]="0123456789";
-        int i;
-        for (i= 0; i< sizeof(kbuf); i++)
-        {
-            put_user(*(kbuf+i), buffer++);        
-        }
-
-        return sizeof(kbuf);        
+        
+        memcpy(buffer, DebugNVDIMMBuffer, DebugNVDIMMBufferAmount);
+        return DebugNVDIMMBufferAmount;        
     }
+
+MODULE_LICENSE("GPL");

@@ -1,10 +1,8 @@
-#obj-m := kernel3.o
-#kernel3-objs := device_write.o
-#kernel3-y := device_write.o
-
 obj-m := fullkernel.o
-#fullkernel-objs := kernel3.o device_write.o
-fullkernel-y := kernel3.o device_write.o device_read.o
+fullkernel-objs := kernel3.o debug_nvdimm.o device_write.o device_read.o
+//fullkernel-y    := kernel3.o debug_nvdimm.o device_write.o device_read.o 
+ccflags-y := -std=gnu99 -Wno-declaration-after-statement	
+COPTS=-g	
 
 all:
 	echo "Make target: all"

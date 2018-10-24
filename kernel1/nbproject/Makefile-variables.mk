@@ -15,13 +15,13 @@ CND_PACKAGE_DIR_Debug=dist/Debug/GNU-Linux/package
 CND_PACKAGE_NAME_Debug=kernel1.tar
 CND_PACKAGE_PATH_Debug=dist/Debug/GNU-Linux/package/kernel1.tar
 # Release configuration
-CND_PLATFORM_Release=GNU-Linux
-CND_ARTIFACT_DIR_Release=dist/Release/GNU-Linux
+CND_PLATFORM_Release=None-Linux
+CND_ARTIFACT_DIR_Release=dist/Release/None-Linux
 CND_ARTIFACT_NAME_Release=kernel1
-CND_ARTIFACT_PATH_Release=dist/Release/GNU-Linux/kernel1
-CND_PACKAGE_DIR_Release=dist/Release/GNU-Linux/package
+CND_ARTIFACT_PATH_Release=dist/Release/None-Linux/kernel1
+CND_PACKAGE_DIR_Release=dist/Release/None-Linux/package
 CND_PACKAGE_NAME_Release=kernel1.tar
-CND_PACKAGE_PATH_Release=dist/Release/GNU-Linux/package/kernel1.tar
+CND_PACKAGE_PATH_Release=dist/Release/None-Linux/package/kernel1.tar
 #
 # include compiler specific variables
 #

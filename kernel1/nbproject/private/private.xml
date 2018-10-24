@@ -9,9 +9,6 @@
         <group>
             <file>file:/D:/PRJ/kernel1/kernel1.c</file>
         </group>
-        <group name="kernelGroup">
-            <file>file:/D:/PRJ/kernel1/Makefile</file>
-            <file>file:/D:/PRJ/kernel1/kernel1.c</file>
-        </group>
+        <group name="kernelGroup"/>
     </open-files>
 </project-private>
